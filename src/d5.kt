@@ -36,7 +36,7 @@ fun main () {
         return if (needsFix) Pair(0,mid) else Pair(mid,0)
     }
 
-    val total = File("input/d5.test")
+    val total = File("input/d5")
         .readLines()
         .fold(Pair(0,0)) { sum, line ->
             when {
