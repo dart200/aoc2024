@@ -1,8 +1,9 @@
+package d04
+
 import java.io.File
 
-
 fun main () {
-    val grid = File("input/d4")
+    val grid = File("src/d04/d04.in")
         .readLines()
         .map { line -> line.toCharArray().toList() }
     val maxRow = grid.size

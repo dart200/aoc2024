@@ -1,3 +1,5 @@
+package d02
+
 import java.io.File
 
 fun safe (arr: List<Int>): Boolean {
@@ -20,7 +22,7 @@ fun safe2 (line: List<Int>): Boolean{
 }
 
 fun main () {
-    val lines = File("input/d2").readLines().map {
+    val lines = File("src/d02/d02.in").readLines().map {
         line -> line.split(' ').map { str -> str.trim().toInt() }
     }
     println(lines.fold(0) { cnt, line ->

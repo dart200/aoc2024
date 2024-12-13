@@ -1,9 +1,11 @@
+package d06
+
 import java.io.File
 
 data class State(val r: Int, val c: Int, val dir: Int)
 
 fun main () {
-    val grid = File("input/d6").readLines().map {
+    val grid = File("src/d06/d06.in").readLines().map {
         line -> line.toCharArray().toList()
     }
     var rStart=0; var cStart=0
@@ -13,7 +15,7 @@ fun main () {
     val objs = List(grid.size) { MutableList(grid[0].size) { 0 } }
 
     fun simulate (simGrid: List<MutableList<Char>>,
-                  stateIn:State,
+                  stateIn: State,
                   findLoop:Boolean): Pair<Int,Boolean> {
         var steps = 0
         val seen = HashSet<String>()

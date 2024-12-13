@@ -1,3 +1,5 @@
+package d07
+
 import java.io.File
 
 fun main () {
@@ -13,7 +15,7 @@ fun main () {
                    }
     }
 
-    println(File("input/d7").readLines().fold(0L) { sum, line ->
+    println(File("src/d07/d07.in").readLines().fold(0L) { sum, line ->
         val nums = Regex("[0-9]+").findAll(line).map { it.value.toLong() }.toList()
         val tot = nums[0]; val list = nums.slice(1..<nums.size);
         if (recurse(tot,list)) sum + tot else sum

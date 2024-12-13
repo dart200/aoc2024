@@ -1,3 +1,5 @@
+package d05
+
 import java.io.File
 
 private operator fun Pair<Int, Int>.plus(b: Pair<Int,Int>): Pair<Int, Int> {
@@ -36,7 +38,7 @@ fun main () {
         return if (needsFix) Pair(0,mid) else Pair(mid,0)
     }
 
-    val total = File("input/d5")
+    val total = File("src/d05/d05.in")
         .readLines()
         .fold(Pair(0,0)) { sum, line ->
             when {

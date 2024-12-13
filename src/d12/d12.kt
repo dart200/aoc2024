@@ -1,3 +1,5 @@
+package d12
+
 import java.io.File
 
 private operator fun Pair<Int, Int>.plus(b: Pair<Int,Int>): Pair<Int, Int> {
@@ -8,10 +10,10 @@ private operator fun Pair<Int, Int>.plus(b: Pair<Int,Int>): Pair<Int, Int> {
 
 private typealias Point = Pair<Int,Int>
 private typealias Dir = Pair<Int,Int>
-private typealias Vec = Pair<Dir,Point>
+private typealias Vec = Pair<Dir, Point>
 private fun main () {
     val dir4 = listOf(1 to 0, -1 to 0, 0 to 1, 0 to -1)
-    val grid = File("input/d12.txt").readLines().map { it.toMutableList() }
+    val grid = File("src/d12/d12.in").readLines().map { it.toMutableList() }
 
     val plotQueue = hashSetOf(0 to 0)
     fun bfsPlot (cell0: Point): Pair<Int,Int> {
@@ -20,7 +22,7 @@ private fun main () {
         val doneChar = plotChar.lowercaseChar()
 
         val edgeSet = HashSet<Vec>()
-        fun checkEdge (dir:Dir,r:Int,c:Int): Int {
+        fun checkEdge (dir: Dir, r:Int, c:Int): Int {
             val checkDirs =
                 if (dir.first == 0) dir4.filter { it.second == 0 }
                 else dir4.filter { it.first == 0 }

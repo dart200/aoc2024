@@ -1,8 +1,10 @@
+package d03
+
 import java.io.File
 
 fun main () {
     println(Regex("mul\\(([0-9]{1,3}),([0-9]{1,3})\\)|don't\\(\\)|do\\(\\)")
-        .findAll(File("input/d3").readText())
+        .findAll(File("input/d03.in").readText())
         .fold(Triple(0, 0, true)) { (total, sum, enabled), m ->
             val gv = m.groupValues;
             val mul = if (gv[0].contains("mul")) gv[1].toInt() * gv[2].toInt() else 0

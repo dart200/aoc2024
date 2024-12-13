@@ -1,10 +1,12 @@
+package d01
+
 import java.io.File
 import kotlin.math.abs
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val lines: List<String> = File("input/d1").readLines()
+    val lines: List<String> = File("src/d01/d01.in").readLines()
     val arr0 = ArrayList<Int>()
     val arr1 = ArrayList<Int>()
 

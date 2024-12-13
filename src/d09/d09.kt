@@ -1,6 +1,4 @@
-import java.io.File
-
-//class INode (
+package d09//class INode (
 //    var idx:Int,
 //    var size:Int,
 //    var id:Int,
@@ -11,7 +9,7 @@ import java.io.File
 //}
 //
 //fun buildList () {
-//    val nums = File("input/d9.test").readText().toCharArray().map { it.digitToInt() }
+//    val nums = File("input/d09.in.test").readText().toCharArray().map { it.digitToInt() }
 //    var idx = 0; var head:INode?=null; var tail:INode?=null
 //    for ((i,size) in nums.withIndex()) {
 //        val node = INode(idx,size, if (i%2==0) i else -1, tail, null);
@@ -23,7 +21,7 @@ import java.io.File
 //}
 //
 //fun main () {
-//    val nums = File("input/d9.test").readText().toCharArray().map { it.digitToInt() }
+//    val nums = File("input/d09.in.test").readText().toCharArray().map { it.digitToInt() }
 //
 //
 //}
