@@ -51,12 +51,14 @@ fun q1 () {
 
 fun q2 () {
     val iArr = lines[3].split(":")[1].split(",").map(stoi)
+    println(iArr)
     val oneItr = iArr.slice(0..<iArr.size-2)
-    println(iArr.reversed().fold(0L) { startA, instr ->
+    val foundA = iArr.reversed().fold(0L) { startA, instr ->
         var regA = startA*8
         while (execute(regA, 0,0, oneItr)[0] != instr) regA += 1
         regA
-    })
+    }
+    println(execute(foundA,0,0,iArr))
 }
 
 fun main () {

@@ -3,7 +3,7 @@ package d11
 import java.io.File
 import java.util.*
 
-//fun main () {
+//fun d18.main () {
 //    val list = LinkedList(File("input/d11.in").readText().split(" "))
 //    val doItr = {
 //        val itr = list.listIterator()

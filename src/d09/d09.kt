@@ -20,7 +20,7 @@ package d09//class INode (
 //
 //}
 //
-//fun main () {
+//fun d18.main () {
 //    val nums = File("input/d09.in.test").readText().toCharArray().map { it.digitToInt() }
 //
 //
