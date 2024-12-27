@@ -4,18 +4,19 @@ import java.io.File
 import kotlin.mod
 import kotlin.time.measureTime
 
+private infix fun Long.mod(other: Long) = this.mod(other)
+
 const val MOD = 16777216L
-fun genNext (num:Long):Long {
-    val s1 = (num shl 6 xor num).mod(MOD)
-    val s2 = (s1 shr 5 xor s1).mod(MOD)
-    return (s2 shl 11 xor s2).mod(MOD)
-}
+fun genNext (num:Long):Long
+    = (num shl 6 xor num mod MOD)
+        .let {it shr 5 xor it mod MOD}
+        .let {it shl 11 xor it mod MOD}
 
 fun getNth (num:Long, n:Int)
     = (0..<n).fold(num) {nth,_ -> genNext(nth)}
 fun q1 () {
     println(File("src/d22/d22.in").readLines()
-        .sumOf { getNth(it.trim().toLong(), 2000) })
+        .sumOf {getNth(it.trim().toLong(), 2000)})
 }
 
 val totals = Array<Int>(65536) {0}
@@ -39,8 +40,9 @@ fun doBuyer (num:Long, n:Int) {
     }
 }
 fun q2 () {
-    File("src/d22/d22.in").readLines()
-        .forEach { doBuyer(it.trim().toLong(), 2000) }
+    File("src/d22/d22.in").bufferedReader().useLines {
+        lines -> lines.forEach { doBuyer(it.trim().toLong(), 2000) }
+    }
     println(totals.maxByOrNull {it})
 }
 
